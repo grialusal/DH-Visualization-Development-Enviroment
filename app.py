@@ -9,12 +9,12 @@ app = Flask(__name__)
 def index():
 
 	#Read the data of csv and pass to front in format pandas
-    #df = pd.read_csv('data.csv').drop('Open', axis=1)
-    #chart_data = df.to_dict(orient='records')
-    #chart_data = json.dumps(chart_data, indent=2)
-    #data = {'chart_data': chart_data}
-    return "<h1>Hola Mundo</h1>"
-    #return render_template("index.html", data=data)
+    df = pd.read_csv('data.csv').drop('Open', axis=1)
+    chart_data = df.to_dict(orient='records')
+    chart_data = json.dumps(chart_data, indent=2)
+    data = {'chart_data': chart_data}
+    #return "<h1>Hola Mundo</h1>"
+    return render_template("index.html", data=data)
 
 if __name__ == "__main__":
     app.run(host="127.0.0.0", port=5000)
