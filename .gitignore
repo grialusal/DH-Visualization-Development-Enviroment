@@ -1,2 +1,3 @@
 app/static/node_modules
 bundle.js
+app/__pycache__

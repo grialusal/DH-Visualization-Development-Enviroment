@@ -1,6 +1,8 @@
 import json
 import pandas as pd
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
+
 from pathlib import Path
 from iteration_utilities import flatten
 
@@ -11,10 +13,11 @@ print('static path: ' + str(static_path))
 
 
 app = Flask(__name__, static_folder=static_path)
+CORS(app)
 
 @app.route("/")
 def index():
 	return app.send_static_file('index.html')
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0", port=80)
+	app.run(host="0.0.0.0", port=5000)
