@@ -4,8 +4,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch",
-    "build": "webpack"
+    "watch": "./node_modules/webpack/bin/webpack.js --watch",
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "license": "MIT",
   "devDependencies": {
@@ -13,7 +14,8 @@
     "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "d3": "^5.7.0"

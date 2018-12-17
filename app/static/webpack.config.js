@@ -26,7 +26,13 @@ const config = {
      stats: {
          colors: true
      },
-     devtool: 'inline-source-map'
-
+     devtool: 'inline-source-map',
+     devServer: {
+     	contentBase: './dist',
+     	hot: true
+     },
+    plugins: [
+		new webpack.HotModuleReplacementPlugin()
+    ],
 };
 module.exports = config;
